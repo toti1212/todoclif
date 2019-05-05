@@ -28,26 +28,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`todo hello`](#todo-hello)
 * [`todo help [COMMAND]`](#todo-help-command)
-
-## `todo hello`
-
-Describe the command here
-
-```
-USAGE
-  $ todo hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/hello.js)_
+* [`todo init`](#todo-init)
 
 ## `todo help [COMMAND]`
 
@@ -65,4 +47,15 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+
+## `todo init`
+
+Initialize the database to save tasks
+
+```
+USAGE
+  $ todo init
+```
+
+_See code: [src/commands/init.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/init.js)_
 <!-- commandsstop -->
