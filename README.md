@@ -28,8 +28,27 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`todo add`](#todo-add)
 * [`todo help [COMMAND]`](#todo-help-command)
 * [`todo init`](#todo-init)
+
+## `todo add`
+
+Add an item to complete in your todo list
+
+```
+USAGE
+  $ todo add
+
+ARGUMENTS
+  ITEM  Item description
+
+DESCRIPTION
+  ...
+  Example: todo add "Buy some ☕️ after work"
+```
+
+_See code: [src/commands/add.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/add.js)_
 
 ## `todo help [COMMAND]`
 
