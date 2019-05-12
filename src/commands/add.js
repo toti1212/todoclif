@@ -24,7 +24,7 @@ class AddCommand extends Command {
   }
 }
 
-AddCommand.description = `Add an item to complete in your todo list
+AddCommand.description = `📝\tAdd an item to complete in your todo list
 ...
 Example: todo add "Buy some ☕️ after work"`;
 

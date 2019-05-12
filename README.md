@@ -28,16 +28,17 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`todo add`](#todo-add)
+* [`todo add [ITEM]`](#todo-add-item)
 * [`todo help [COMMAND]`](#todo-help-command)
+* [`todo list`](#todo-list)
 
-## `todo add`
+## `todo add [ITEM]`
 
 Add an item to complete in your todo list
 
 ```
 USAGE
-  $ todo add
+  $ todo add [ITEM]
 
 ARGUMENTS
   ITEM  Item description
@@ -65,4 +66,22 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+
+## `todo list`
+
+Describe the command here
+
+```
+USAGE
+  $ todo list
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/list.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/list.js)_
 <!-- commandsstop -->
