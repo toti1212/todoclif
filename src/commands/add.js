@@ -1,5 +1,5 @@
 const { Command } = require('@oclif/command');
-const addItem = require('../utils/add');
+const Storage = require('../utils/storage')
 
 class AddCommand extends Command {
   async run() {
@@ -7,7 +7,19 @@ class AddCommand extends Command {
     if (args.ITEM === undefined) {
       this.error('You forgot the item description');
     }
-    addItem(this.config.dataDir, args.ITEM);
+    const storage = Storage.getInstance(this.config);
+    const data = await storage.read();
+
+    // TODO: Make more complex item for filter and tag
+    // Simle item
+    const item = {
+      id: data.todo.length + 1 || 0,
+      desc: args.ITEM
+    }
+
+    data.todo.push(item);
+
+    await storage.write(data)
     this.log(`Successfully added '${args.ITEM}' in your todo list`);
   }
 }
@@ -15,13 +27,6 @@ class AddCommand extends Command {
 AddCommand.description = `Add an item to complete in your todo list
 ...
 Example: todo add "Buy some ☕️ after work"`;
-
-// AddCommand.flags = {
-//   index: flags.string({
-//     char: 'i',
-//     description: 'The position in the todo list you wanto to see it',
-//   }),
-// };
 
 AddCommand.args = [
   {
