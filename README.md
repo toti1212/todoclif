@@ -28,13 +28,29 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`todo list [TYPE]`](#todo-list-type)
 * [`todo add [ITEM]`](#todo-add-item)
+* [`todo done [INDEX]`](#todo-done-index)
 * [`todo help [COMMAND]`](#todo-help-command)
-* [`todo list`](#todo-list)
+
+## `todo list [TYPE]`
+
+🏷	List of pending and done items
+
+```
+USAGE
+  $ todo list [TYPE]
+
+ARGUMENTS
+  TYPE  (pending|done) Items list. You can get pending or done items;
+```
+
+_See code: [src/commands/list.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/list.js)_
+<!-- commandsstop -->
 
 ## `todo add [ITEM]`
 
-Add an item to complete in your todo list
+📝	Add an item to complete in your todo list
 
 ```
 USAGE
@@ -49,6 +65,24 @@ DESCRIPTION
 ```
 
 _See code: [src/commands/add.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/add.js)_
+
+## `todo done [INDEX]`
+
+✅	Mark as done a pending item
+
+```
+USAGE
+  $ todo done [INDEX]
+
+ARGUMENTS
+  INDEX  Todo item identifier
+
+DESCRIPTION
+  ...
+  Example: todo done 1
+```
+
+_See code: [src/commands/done.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/done.js)_
 
 ## `todo help [COMMAND]`
 
@@ -66,22 +100,3 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
-
-## `todo list`
-
-Describe the command here
-
-```
-USAGE
-  $ todo list
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/list.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/list.js)_
-<!-- commandsstop -->
