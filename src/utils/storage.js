@@ -36,7 +36,7 @@ class Storage {
           if (error) throw error;
         });
       }
-      return true
+      return true;
     } catch (err) {
       console.log(err);
       return false;

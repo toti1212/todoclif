@@ -9,39 +9,46 @@ class ListCommand extends Command {
     const storage = Storage.getInstance(this.config);
     const data = await storage.read();
 
-    const dataEmpty = () => chalk.yellow('Empty lists 📭')
+    const dataEmpty = () => chalk.yellow('Empty lists 📭');
 
     const dataTodo = () => {
       if (!data.todo.length) {
         return dataEmpty();
       }
-      return data.todo.map(item => chalk.red(`[${item.id}] - ${item.desc}`));
+      let resultTodo = '';
+      data.todo.map(
+        (item, idx) =>
+          (resultTodo += chalk.red(`[${idx + 1}] - ${item.desc}\n`))
+      );
+      return resultTodo;
     };
 
     const dataDone = () => {
       if (!data.done.length) {
         return dataEmpty();
       }
-      return data.done.map(item => chalk.green(`[${item.id}] - ${item.desc}`));
+      let resultDone = '';
+      data.done.map(
+        (item, idx) =>
+          (resultDone += chalk.green(`[${idx + 1}] - ${item.desc}\n`))
+      );
+      return resultDone;
     };
-
-
-
 
     // TODO: Can check in a list of possibles values. Review Args.
     if (args.TYPE === 'pending') {
-      return console.log(`Pending: \n${dataTodo()}`);
+      return console.log(`Pending  📆\n${dataTodo()}`);
     }
 
     if (args.TYPE === 'done') {
-      return console.log(`Done: \n${dataDone()}`);
+      return console.log(`Done  ✅\n${dataDone()}`);
     }
 
     if (!data.todo.length && !data.done.length) {
       return console.log(dataEmpty());
     }
 
-    console.log(`Pending: \n ${dataTodo()}\nDone: \n ${dataDone()}`);
+    console.log(`Pending  📆\n${dataTodo()}\n\nDone  ✅\n${dataDone()}`);
   }
 }
 

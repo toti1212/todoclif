@@ -1,5 +1,6 @@
 const { Command } = require('@oclif/command');
-const Storage = require('../utils/storage')
+const chalk = require('chalk');
+const Storage = require('../utils/storage');
 
 class AddCommand extends Command {
   async run() {
@@ -13,14 +14,15 @@ class AddCommand extends Command {
     // TODO: Make more complex item for filter and tag
     // Simle item
     const item = {
-      id: data.todo.length + 1 || 0,
-      desc: args.ITEM
-    }
+      desc: args.ITEM,
+    };
 
     data.todo.push(item);
 
-    await storage.write(data)
-    this.log(`Successfully added '${args.ITEM}' in your todo list`);
+    await storage.write(data);
+    this.log(
+      chalk.green(`Successfully added '${args.ITEM}' in your todo list  ✅`)
+    );
   }
 }
 
