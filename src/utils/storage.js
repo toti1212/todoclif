@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const CONSTANTS = require('../utils/constants');
 
 let instance = null;
 
@@ -21,11 +22,7 @@ class Storage {
 
   async checkInit() {
     try {
-      const initJson = JSON.stringify(
-        { root: true, todo: [], done: [] },
-        null,
-        2
-      );
+      const initJson = JSON.stringify(CONSTANTS.DEFAULT_DATA, null, 2);
       if (!fs.existsSync(this.dataDir)) {
         await fs.mkdirSync(this.dataDir, { recursive: true }, error => {
           if (error) throw error;

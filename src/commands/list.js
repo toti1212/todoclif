@@ -36,8 +36,8 @@ class ListCommand extends Command {
     };
 
     // TODO: Can check in a list of possibles values. Review Args.
-    if (args.TYPE === 'pending') {
-      return console.log(`Pending  📆\n${dataTodo()}`);
+    if (args.TYPE === 'todo') {
+      return console.log(`Todo  📆\n${dataTodo()}`);
     }
 
     if (args.TYPE === 'done') {
@@ -48,18 +48,18 @@ class ListCommand extends Command {
       return console.log(dataEmpty());
     }
 
-    console.log(`Pending  📆\n${dataTodo()}\n\nDone  ✅\n${dataDone()}`);
+    console.log(`Todo  📆\n${dataTodo()}\n\nDone  ✅\n${dataDone()}`);
   }
 }
 
-ListCommand.description = `🏷\tList of pending and done items`;
+ListCommand.description = `🏷\tList of to do and done items`;
 
 ListCommand.args = [
   {
     name: 'TYPE',
     require: true,
-    description: `Items list. You can get pending or done items;`,
-    options: ['pending', 'done'],
+    description: `Items list. You can get to do or done items;`,
+    options: ['todo', 'done'],
   },
 ];
 
