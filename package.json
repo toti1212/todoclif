@@ -1,12 +1,12 @@
 {
-  "name": "todo-bash",
+  "name": "todo-cli",
   "description": "A bash app to tracking your list of pending and no procrastinate anymore",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Rodrigo Suárez @_toti1212",
   "bin": {
     "todo": "DEBUG=* ./bin/run"
   },
-  "bugs": "https://github.com/toti1212/todo-bash/issues",
+  "bugs": "https://github.com/toti1212/todo-cli/issues",
   "dependencies": {
     "@oclif/command": "^1.5.13",
     "@oclif/config": "^1.12.12",
@@ -36,7 +36,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/toti1212/todo-bash",
+  "homepage": "https://github.com/toti1212/todo-cli",
   "keywords": [
     "oclif"
   ],
@@ -52,7 +52,7 @@
       "init": "./src/hooks/init/init"
     }
   },
-  "repository": "toti1212/todo-bash",
+  "repository": "toti1212/todo-cli",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint .",

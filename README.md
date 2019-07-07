@@ -5,7 +5,7 @@ A bash app to tracking your list of pending and no procrastinate anymore
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/todo-bash.svg)](https://npmjs.org/package/todo-bash)
 [![Downloads/week](https://img.shields.io/npm/dw/todo-bash.svg)](https://npmjs.org/package/todo-bash)
-[![License](https://img.shields.io/npm/l/todo-bash.svg)](https://github.com/toti1212/todo-bash/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/todo-bash.svg)](https://github.com/toti1212/todo-bash/blob/master/LICENSE)
 
 <!-- toc -->
 
@@ -17,15 +17,16 @@ A bash app to tracking your list of pending and no procrastinate anymore
 
 <!-- usage -->
 
-```sh-session
+```shell
 $ npm install -g todo-bash
+
 $ todo COMMAND
 running command...
-$ todo (-v|--version|version)
-todo-bash/0.0.0 darwin-x64 node-v8.11.4
+
 $ todo --help [COMMAND]
+
 USAGE
-  $ todo COMMAND
+$ todo COMMAND
 ...
 ```
 
