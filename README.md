@@ -1,11 +1,11 @@
-# todo-bash
+# todoclif
 
-A bash app to tracking your list of pending and no procrastinate anymore
+A CLI to tracking your list of pending and no procrastinate anymore
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/todo-bash.svg)](https://npmjs.org/package/todo-bash)
-[![Downloads/week](https://img.shields.io/npm/dw/todo-bash.svg)](https://npmjs.org/package/todo-bash)
-[![License](https://img.shields.io/npm/l/todo-bash.svg)](https://github.com/toti1212/todo-bash/blob/master/LICENSE)
+[![Version](https://img.shields.io/npm/v/todoclif.svg)](https://npmjs.org/package/todoclif)
+[![Downloads/week](https://img.shields.io/npm/dw/todoclif.svg)](https://npmjs.org/package/todoclif)
+[![License](https://img.shields.io/npm/l/todoclif.svg)](https://github.com/toti1212/todoclif/blob/master/LICENSE)
 
 <!-- toc -->
 
@@ -18,7 +18,7 @@ A bash app to tracking your list of pending and no procrastinate anymore
 <!-- usage -->
 
 ```shell
-$ npm install -g todo-bash
+$ npm install -g todoclif
 
 $ todo COMMAND
 running command...
@@ -58,7 +58,7 @@ DESCRIPTION
   Example: todo add "Buy some ☕️ after work"
 ```
 
-_See code: [src/commands/add.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/add.js)_
+_See code: [src/commands/add.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/add.js)_
 
 ## `🧹 todo clean [LIST]`
 
@@ -78,7 +78,7 @@ DESCRIPTION
    Example: todo clean done
 ```
 
-_See code: [src/commands/clean.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/clean.js)_
+_See code: [src/commands/clean.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/clean.js)_
 
 ## `✅ todo done [INDEX]`
 
@@ -96,7 +96,7 @@ DESCRIPTION
   Example: todo done 1
 ```
 
-_See code: [src/commands/done.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/done.js)_
+_See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
 
 ## `🏷 todo list [TYPE]`
 
@@ -110,7 +110,7 @@ ARGUMENTS
   TYPE  (pending|done) Items list. You can get pending or done items;
 ```
 
-_See code: [src/commands/list.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/list.js)_
+_See code: [src/commands/list.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/list.js)_
 
 ## `🆘 todo help [COMMAND]`
 
