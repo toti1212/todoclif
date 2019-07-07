@@ -1,5 +1,6 @@
-const chalk = require('chalk');
 const { Command } = require('@oclif/command');
+const chalk = require('chalk');
+const CONSTANTS = require('../utils/constants');
 const Storage = require('../utils/storage');
 
 class ListCommand extends Command {
@@ -9,7 +10,7 @@ class ListCommand extends Command {
     const storage = Storage.getInstance(this.config);
     const data = await storage.read();
 
-    const dataEmpty = () => chalk.yellow('Empty lists 📭');
+    const dataEmpty = () => chalk.yellow(CONSTANTS.LIST_EMPTY);
 
     const dataTodo = () => {
       if (!data.todo.length) {
@@ -37,18 +38,20 @@ class ListCommand extends Command {
 
     // TODO: Can check in a list of possibles values. Review Args.
     if (args.TYPE === 'todo') {
-      return console.log(`Todo  📆\n${dataTodo()}`);
+      return this.log(CONSTANTS.LIST_TODOS(dataTodo));
     }
 
     if (args.TYPE === 'done') {
-      return console.log(`Done  ✅\n${dataDone()}`);
+      return this.log(CONSTANTS.LIST_DONES(dataDone));
     }
 
     if (!data.todo.length && !data.done.length) {
-      return console.log(dataEmpty());
+      return this.log(dataEmpty());
     }
 
-    console.log(`Todo  📆\n${dataTodo()}\n\nDone  ✅\n${dataDone()}`);
+    this.log(
+      `${CONSTANTS.LIST_TODOS(dataTodo)}\n\n${CONSTANTS.LIST_DONES(dataDone)}`
+    );
   }
 }
 

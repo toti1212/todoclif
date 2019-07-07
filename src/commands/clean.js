@@ -1,25 +1,24 @@
 const { cli } = require('cli-ux');
 const { Command } = require('@oclif/command');
-const Storage = require('../utils/storage');
 const CONSTANTS = require('../utils/constants');
+const Storage = require('../utils/storage');
 
 class CleanCommand extends Command {
   async run() {
     const { args } = this.parse(CleanCommand);
 
     if (args.LIST_TYPE === undefined) {
-      this.error('Which list do you want to clean?');
+      this.error(CONSTANTS.CLEAN_EMPTY_LIST);
     }
 
     // Get the flag
-    const all_items = args.LIST_TYPE.default === 'all';
+    const is_all_lists = args.LIST_TYPE.default === 'all';
 
     // Confirm
-    const prompt_msg = `🤔 Are you sure you want to delete ${
-      all_items
-        ? 'ALL items'
-        : `all ${args.LIST_TYPE.default.toUpperCase()} items`
-    }? \(Yes/No)`;
+    const prompt_msg = CONSTANTS.CLEAN_PROMPT_MSG(
+      is_all_lists,
+      args.LIST_TYPE.default.toUpperCase()
+    );
     let input = await cli.confirm(prompt_msg);
     if (!input) return false;
 
@@ -27,7 +26,7 @@ class CleanCommand extends Command {
     const storage = Storage.getInstance(this.config);
     let data = await storage.read();
 
-    all_items
+    is_all_lists
       ? (data = CONSTANTS.DEFAULT_DATA)
       : (data[args.LIST_TYPE.default] = []);
 

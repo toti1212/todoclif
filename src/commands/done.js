@@ -1,5 +1,6 @@
 const { Command } = require('@oclif/command');
 const chalk = require('chalk');
+const CONSTANTS = require('../utils/constants');
 const Storage = require('../utils/storage');
 
 class DoneCommand extends Command {
@@ -16,9 +17,7 @@ class DoneCommand extends Command {
         data.done.push(item);
         storage.write(data);
       } else {
-        this.log(
-          chalk.yellow(`Does not exists an item with ID '${args.INDEX}' ⚠️`)
-        );
+        this.log(chalk.yellow(CONSTANTS.DONE_INCORRECT_INDEX(args.INDEX)));
       }
     }
   }

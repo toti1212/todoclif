@@ -1,12 +1,13 @@
 const { Command } = require('@oclif/command');
 const chalk = require('chalk');
+const CONSTANTS = require('../utils/constants');
 const Storage = require('../utils/storage');
 
 class AddCommand extends Command {
   async run() {
     const { args } = this.parse(AddCommand);
     if (args.ITEM === undefined) {
-      this.error('You forgot the item description');
+      this.error(CONSTANTS.ADD_EMPTY_ITEM);
     }
     const storage = Storage.getInstance(this.config);
     const data = await storage.read();
@@ -20,9 +21,7 @@ class AddCommand extends Command {
     data.todo.push(item);
 
     await storage.write(data);
-    this.log(
-      chalk.green(`Successfully added '${args.ITEM}' in your todo list  ✅`)
-    );
+    this.log(chalk.green(CONSTANTS.SUCESSFULLY_ADDED(args.ITEM)));
   }
 }
 
