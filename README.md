@@ -1,5 +1,4 @@
-todo-bash
-=========
+# todo-bash
 
 A bash app to tracking your list of pending and no procrastinate anymore
 
@@ -9,11 +8,15 @@ A bash app to tracking your list of pending and no procrastinate anymore
 [![License](https://img.shields.io/npm/l/todo-bash.svg)](https://github.com/toti1212/todo-bash/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
+
+- [Usage](#usage)
+- [Commands](#commands)
+  <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g todo-bash
 $ todo COMMAND
@@ -25,32 +28,22 @@ USAGE
   $ todo COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`todo list [TYPE]`](#todo-list-type)
-* [`todo add [ITEM]`](#todo-add-item)
-* [`todo done [INDEX]`](#todo-done-index)
-* [`todo help [COMMAND]`](#todo-help-command)
 
-## `todo list [TYPE]`
+- [`todo add [ITEM]`](#todo-add-item)
+- [`todo clean [FLAG]`](#todo-clean)
+- [`todo done [INDEX]`](#todo-done-index)
+- [`todo list [TYPE]`](#todo-list-type)
+- [`todo help [COMMAND]`](#todo-help-command)
 
-🏷	List of pending and done items
+## `📝 todo add [ITEM]`
 
-```
-USAGE
-  $ todo list [TYPE]
-
-ARGUMENTS
-  TYPE  (pending|done) Items list. You can get pending or done items;
-```
-
-_See code: [src/commands/list.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/list.js)_
-<!-- commandsstop -->
-
-## `todo add [ITEM]`
-
-📝	Add an item to complete in your todo list
+Add an item to complete in your todo list
 
 ```
 USAGE
@@ -66,9 +59,29 @@ DESCRIPTION
 
 _See code: [src/commands/add.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/add.js)_
 
-## `todo done [INDEX]`
+## `🧹 todo clean [LIST]`
 
-✅	Mark as done a pending item
+Clean items list
+
+```
+USAGE
+  $ todo clean [LIST]
+
+OPTIONS
+   a, all   all lists
+   d, done  done list
+   t, todo  todo list
+
+DESCRIPTION
+  ...
+   Example: todo clean done
+```
+
+_See code: [src/commands/clean.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/clean.js)_
+
+## `✅ todo done [INDEX]`
+
+Mark as done a pending item
 
 ```
 USAGE
@@ -84,7 +97,21 @@ DESCRIPTION
 
 _See code: [src/commands/done.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/done.js)_
 
-## `todo help [COMMAND]`
+## `🏷 todo list [TYPE]`
+
+List of pending and done items
+
+```
+USAGE
+  $ todo list [TYPE]
+
+ARGUMENTS
+  TYPE  (pending|done) Items list. You can get pending or done items;
+```
+
+_See code: [src/commands/list.js](https://github.com/toti1212/todo-bash/blob/v0.0.0/src/commands/list.js)_
+
+## `🆘 todo help [COMMAND]`
 
 display help for todo
 
@@ -100,3 +127,5 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+
+<!-- commandsstop -->
