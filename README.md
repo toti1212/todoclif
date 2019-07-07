@@ -6,14 +6,17 @@ A CLI to tracking your list of pending and no procrastinate anymore
 [![Version](https://img.shields.io/npm/v/todoclif.svg)](https://npmjs.org/package/todoclif)
 [![Downloads/week](https://img.shields.io/npm/dw/todoclif.svg)](https://npmjs.org/package/todoclif)
 [![License](https://img.shields.io/npm/l/todoclif.svg)](https://github.com/toti1212/todoclif/blob/master/LICENSE)
-
 <!-- toc -->
 
 - [Usage](#usage)
 - [Commands](#commands)
   <!-- tocstop -->
+ 
+[![asciicast](https://asciinema.org/a/1vZPqGb8ml2iZxUwSo9tFmG30.svg)](https://asciinema.org/a/1vZPqGb8ml2iZxUwSo9tFmG30)
+ 
 
 # Usage
+
 
 <!-- usage -->
 
