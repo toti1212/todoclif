@@ -1,10 +1,10 @@
 {
   "name": "todoclif",
   "description": "A CLI to tracking your list of pending and no procrastinate anymore",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "author": "Rodrigo Suárez @_toti1212",
   "bin": {
-    "todo": "DEBUG=* ./bin/run"
+    "todo": "./bin/run"
   },
   "bugs": "https://github.com/toti1212/todoclif/issues",
   "dependencies": {
