@@ -34,7 +34,7 @@ class CleanCommand extends Command {
   }
 }
 
-CleanCommand.description = `🧹  Clean items list
+CleanCommand.description = `🧹\tClean items list
 ...
 Example: todo clean --all
 `;

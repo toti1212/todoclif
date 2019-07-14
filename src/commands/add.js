@@ -21,7 +21,7 @@ class AddCommand extends Command {
     data.todo.push(item);
 
     await storage.write(data);
-    this.log(chalk.green(CONSTANTS.SUCESSFULLY_ADDED(args.ITEM)));
+    this.log(chalk.green(CONSTANTS.ADD_SUCESSFULLY_ADDED(args.ITEM)));
   }
 }
 
