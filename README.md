@@ -42,6 +42,7 @@ $ todo COMMAND
 - [`todo add [ITEM]`](#todo-add-item)
 - [`todo clean [FLAG]`](#todo-clean)
 - [`todo done [INDEX]`](#todo-done-index)
+- [`todo edit [INDEX]`](#todo-edit-index)
 - [`todo list [TYPE]`](#todo-list-type)
 - [`todo help [COMMAND]`](#todo-help-command)
 
@@ -99,6 +100,26 @@ DESCRIPTION
   Example: todo done 1
 ```
 
+_See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
+
+## `✍️ todo edit [INDEX]`
+
+Edit a todo item destription
+```
+USAGE
+  $ todo edit [ITEM ID] "[NEW DESRIPTION]"
+
+ARGUMENTS
+  ID    Item ID identifier
+  DESC  New description
+
+DESCRIPTION
+  ...
+  Example: todo edit 1 "The new description 🙈"
+
+ALIASES
+  $ todo e
+```
 _See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
 
 ## `🏷 todo list [TYPE]`
