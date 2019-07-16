@@ -1,52 +1,27 @@
 const { Command } = require('@oclif/command');
 const chalk = require('chalk');
 const CONSTANTS = require('../utils/constants');
-const Storage = require('../utils/storage');
-
+const list = require('../utils/list');
 class ListCommand extends Command {
   async run() {
     const { args } = this.parse(ListCommand);
 
-    const storage = Storage.getInstance(this.config);
-    const data = await storage.read();
-
-    const dataEmpty = () => chalk.yellow(CONSTANTS.LIST_EMPTY);
-
-    const dataTodo = () => {
-      if (!data.todo.length) {
-        return dataEmpty();
-      }
-      let resultTodo = '';
-      data.todo.map(
-        (item, idx) =>
-          (resultTodo += chalk.red(`[${idx + 1}] - ${item.desc}\n`))
-      );
-      return resultTodo;
-    };
-
-    const dataDone = () => {
-      if (!data.done.length) {
-        return dataEmpty();
-      }
-      let resultDone = '';
-      data.done.map(
-        (item, idx) =>
-          (resultDone += chalk.green(`[${idx + 1}] - ${item.desc}\n`))
-      );
-      return resultDone;
-    };
-
     // TODO: Can check in a list of possibles values. Review Args.
     if (args.TYPE === 'todo') {
+      const dataTodo = await list('todo');
       return this.log(CONSTANTS.LIST_TODOS(dataTodo));
     }
 
     if (args.TYPE === 'done') {
+      const dataDone = await list('done');
       return this.log(CONSTANTS.LIST_DONES(dataDone));
     }
 
-    if (!data.todo.length && !data.done.length) {
-      return this.log(dataEmpty());
+    const dataTodo = await list('todo');
+    const dataDone = await list('done');
+
+    if (!dataTodo && !dataDone) {
+      return this.log(dataTodo);
     }
 
     this.log(
@@ -54,6 +29,7 @@ class ListCommand extends Command {
     );
   }
 }
+
 
 ListCommand.description = `🏷\tList of to do and done items`;
 

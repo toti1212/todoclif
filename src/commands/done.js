@@ -2,6 +2,7 @@ const { Command } = require('@oclif/command');
 const chalk = require('chalk');
 const CONSTANTS = require('../utils/constants');
 const Storage = require('../utils/storage');
+const list = require('../utils/list');
 
 class DoneCommand extends Command {
   async run() {
@@ -16,6 +17,8 @@ class DoneCommand extends Command {
         data.todo.splice(args.INDEX - 1, 1);
         data.done.push(item);
         storage.write(data);
+        
+        this.log(chalk.green(CONSTANTS.DONE_ITEM_MARKED(args.INDEX)));
       } else {
         this.log(chalk.yellow(CONSTANTS.DONE_INCORRECT_INDEX(args.INDEX)));
       }
