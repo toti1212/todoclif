@@ -1,8 +1,9 @@
 const { Command } = require('@oclif/command');
 const chalk = require('chalk');
+const CONSTANTS = require('../utils/constants');
 const Storage = require('./storage');
 
-const list = async (type) => {
+const list = async type => {
   const storage = Storage.getInstance(this.config);
   const data = await storage.read();
 
@@ -14,12 +15,11 @@ const list = async (type) => {
     }
     let resultTodo = '';
     data.todo.map(
-      (item, idx) =>
-        (resultTodo += chalk.red(`[${idx + 1}] - ${item.desc}\n`))
+      (item, idx) => (resultTodo += chalk.red(`[${idx + 1}] - ${item.desc}\n`))
     );
     return resultTodo;
   }
-    
+
   if (type === 'done') {
     if (!data.done.length) {
       return dataEmpty();
@@ -31,9 +31,6 @@ const list = async (type) => {
     );
     return resultDone;
   }
-}
+};
 
-module.exports = list
-
-
-
+module.exports = list;
