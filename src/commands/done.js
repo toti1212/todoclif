@@ -18,11 +18,7 @@ class DoneCommand extends Command {
         data.done.push(item);
         storage.write(data);
         
-        this.log(chalk.green(CONSTANTS.DONE_HAS_BEEN_MARKED(args.INDEX)));
-        
-        // const dataTodo = await list('todo');
-        // this.log(CONSTANTS.LIST_TODOS(dataTodo));
-
+        this.log(chalk.green(CONSTANTS.DONE_ITEM_MARKED(args.INDEX)));
       } else {
         this.log(chalk.yellow(CONSTANTS.DONE_INCORRECT_INDEX(args.INDEX)));
       }

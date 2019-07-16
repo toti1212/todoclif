@@ -13,7 +13,7 @@ module.exports = {
   // done
   DONE_INCORRECT_INDEX: index =>
     `⚠️  Does not exists an item with ID '${index}'`,
-  DONE_HAS_BEEN_MARKED: index => 
+  DONE_ITEM_MARKED: index => 
     `✅ Item ${index} has been marked as done`,
   // list
   LIST_EMPTY: '📭 Empty lists',
