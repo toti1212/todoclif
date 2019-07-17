@@ -1,4 +1,5 @@
 const { Command } = require('@oclif/command');
+const { cli } = require('cli-ux');
 const chalk = require('chalk');
 const CONSTANTS = require('../utils/constants');
 const Storage = require('../utils/storage');
@@ -11,7 +12,7 @@ class DoneCommand extends Command {
 
     const data = await storage.read();
 
-    if (args.INDEX) {
+    if (!isNaN(args.INDEX)) {
       const item = data.todo[args.INDEX - 1];
       if (item) {
         data.todo.splice(args.INDEX - 1, 1);
@@ -22,6 +23,18 @@ class DoneCommand extends Command {
       } else {
         this.log(chalk.yellow(CONSTANTS.DONE_INCORRECT_INDEX(args.INDEX)));
       }
+    } else if (args.INDEX === 'all') {
+      // Confirm
+      const prompt_msg = CONSTANTS.DONE_PROMPT_MSG;
+      let input = await cli.confirm(prompt_msg);      
+      if (!input) return false;
+      
+      data.done = data.done.concat(data.todo);
+      data.todo = CONSTANTS.DEFAULT_DATA.todo;
+      storage.write(data);
+      this.log(chalk.green(CONSTANTS.DONE_ALL_MARKED));
+    } else {
+      this.log(chalk.yellow(CONSTANTS.DONE_INCORRECT_INDEX(args.INDEX)));
     }
   }
 }
