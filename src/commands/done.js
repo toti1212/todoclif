@@ -26,7 +26,7 @@ class DoneCommand extends Command {
     } else if (args.INDEX === 'all') {
       // Confirm
       const prompt_msg = CONSTANTS.DONE_PROMPT_MSG;
-      let input = await cli.confirm(prompt_msg);      
+      let input = await cli.confirm(CONSTANTS.DONE_PROMPT_MSG);      
       if (!input) return false;
       
       data.done = data.done.concat(data.todo);
