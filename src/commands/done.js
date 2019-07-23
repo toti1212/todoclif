@@ -41,7 +41,9 @@ class DoneCommand extends Command {
 
 DoneCommand.description = `✅\tMark as done a pending item
 ...
-Example: todo done 1
+Example: 
+$ todo done 1
+$ todo done all   
 `;
 
 DoneCommand.args = [
@@ -49,7 +51,7 @@ DoneCommand.args = [
     name: 'INDEX',
     description: 'Todo item identifier',
     require: true,
-  },
+  }
 ];
 
 module.exports = DoneCommand;
