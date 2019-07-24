@@ -52,16 +52,7 @@ class CleanCommand extends Command {
   }
 }
 
-CleanCommand.description = `🧹\tClean items list
-...
-Example:
-$ todo clean todo
-$ todo clean all
-$ todo clean done 1
-`;
-
-CleanCommand.usage = 'clean [LIST_TYPE] [INDEX]';
-
+CleanCommand.aliases = ['cl', 'c'];
 CleanCommand.args = [
   {
     name: 'LIST_TYPE',
@@ -77,5 +68,14 @@ CleanCommand.args = [
     description: 'Item index',
   },
 ];
+CleanCommand.description = `🧹  Clean items list
+...
+Example:
+$ todo clean todo
+$ todo clean all
+$ todo clean done 1
+`;
+CleanCommand.usage = 'clean <LIST_TYPE> <INDEX>';
+
 
 module.exports = CleanCommand;

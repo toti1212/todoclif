@@ -29,11 +29,7 @@ class EditCommand extends Command {
   }
 }
 
-EditCommand.description = `✍️\tEdit a todo item destription
-...
-Example: todo edit 1 "The new description 🙈"
-`;
-EditCommand.usage = `edit [ITEM ID] "[NEW DESRIPTION]"`;
+// Command config
 EditCommand.aliases = ['e'];
 EditCommand.args = [
   {
@@ -47,5 +43,11 @@ EditCommand.args = [
     description: 'New description',
   },
 ];
+EditCommand.description = `✍️  Edit a todo item destription
+...
+Example:
+todo edit 1 "The new description 🙈"
+`;
+EditCommand.usage = 'edit <ID> "<DESC>"';
 
 module.exports = EditCommand;

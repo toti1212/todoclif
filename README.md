@@ -6,17 +6,16 @@ A CLI to tracking your list of pending and no procrastinate anymore
 [![Version](https://img.shields.io/npm/v/todoclif.svg)](https://npmjs.org/package/todoclif)
 [![Downloads/week](https://img.shields.io/npm/dw/todoclif.svg)](https://npmjs.org/package/todoclif)
 [![License](https://img.shields.io/npm/l/todoclif.svg)](https://github.com/toti1212/todoclif/blob/master/LICENSE)
+
 <!-- toc -->
 
 - [Usage](#usage)
 - [Commands](#commands)
   <!-- tocstop -->
- 
+
 [![asciicast](https://asciinema.org/a/1vZPqGb8ml2iZxUwSo9tFmG30.svg)](https://asciinema.org/a/1vZPqGb8ml2iZxUwSo9tFmG30)
- 
 
 # Usage
-
 
 <!-- usage -->
 
@@ -39,20 +38,20 @@ $ todo COMMAND
 
 <!-- commands -->
 
-- [`todo add [ITEM]`](#todo-add-item)
-- [`todo clean [FLAG]`](#todo-clean)
-- [`todo done [INDEX]`](#todo-done-index)
+- [`todo add <ITEM>`](#todo-add-item)
+- [`todo clean <LIST_TYPE> <INDEX>`](#todo-clean)
+- [`todo done (<INDEX> | all)`](#todo-done-index)
 - [`todo edit [INDEX]`](#todo-edit-index)
 - [`todo list [TYPE]`](#todo-list-type)
 - [`todo help [COMMAND]`](#todo-help-command)
 
-## `📝 todo add [ITEM]`
+## `📝 todo add <ITEM>`
 
 Add an item to complete in your todo list
 
 ```
 USAGE
-  $ todo add [ITEM]
+  $ todo add <ITEM>
 
 ARGUMENTS
   ITEM  Item description
@@ -60,17 +59,20 @@ ARGUMENTS
 DESCRIPTION
   ...
   Example: todo add "Buy some ☕️ after work"
+
+ALIASES
+  $ todo a
 ```
 
 _See code: [src/commands/add.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/add.js)_
 
-## `🧹 todo clean [LIST]`
+## `🧹 todo clean <LIST_TYPE> <INDEX>`
 
 Clean items list
 
 ```
 USAGE
-  $ todo clean [LIST]
+  $ todo clean <LIST_TYPE> <INDEX>
 
 OPTIONS
    a, all   all lists
@@ -79,38 +81,49 @@ OPTIONS
 
 DESCRIPTION
   ...
-   Example: todo clean done
+  Example:
+  $ todo clean todo
+  $ todo clean all
+  $ todo clean done 1
+
+ALIASES
+  $ todo cl
+  $ todo c
 ```
 
 _See code: [src/commands/clean.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/clean.js)_
 
-## `✅ todo done [INDEX]`
+## `✅ todo done (<INDEX> | all)`
 
 Mark as done a pending item
 
 ```
 USAGE
-  $ todo done [INDEX] | ALL
+  $ todo done (<INDEX> | all)
 
 ARGUMENTS
   INDEX  Todo item identifier
-  ALL    Command to mark all items as done
+  all    Command to mark all items as done
+
 DESCRIPTION
   ...
-  Example: todo done 1
-           todo done all
+  Example:
+  $ todo done 1
+  $ todo done all
 
+ALIASES
+  $ todo d
 ```
 
 _See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
 
-
-## `✍️ todo edit [INDEX]`
+## `✍️ todo edit <ID> "<DESC>"`
 
 Edit a todo item destription
+
 ```
 USAGE
-  $ todo edit [ITEM ID] "[NEW DESRIPTION]"
+  $ todo edit <ID> "<DESC>"
 
 ARGUMENTS
   ID    Item ID identifier
@@ -123,18 +136,30 @@ DESCRIPTION
 ALIASES
   $ todo e
 ```
+
 _See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
 
-## `🏷 todo list [TYPE]`
+## `🏷 todo list (todo|done)`
 
 List of pending and done items
 
 ```
 USAGE
-  $ todo list [TYPE]
+  $ todo list (todo|done)
 
 ARGUMENTS
-  TYPE  (pending|done) Items list. You can get pending or done items;
+  TYPE  (todo|done) Items list. You can get pending or done items;
+
+DESCRIPTION
+  ...
+  Example:
+  $ todo list
+  $ todo list todo
+  $ todo list done
+
+ALIASES
+  $ todo ls
+  $ todo l
 ```
 
 _See code: [src/commands/list.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/list.js)_

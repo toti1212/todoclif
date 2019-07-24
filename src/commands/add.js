@@ -25,10 +25,8 @@ class AddCommand extends Command {
   }
 }
 
-AddCommand.description = `📝\tAdd an item to complete in your todo list
-...
-Example: todo add "Buy some ☕️ after work"`;
-
+// Command config
+AddCommand.aliases = ['a'];
 AddCommand.args = [
   {
     name: 'ITEM',
@@ -36,5 +34,11 @@ AddCommand.args = [
     description: 'Item description',
   },
 ];
+AddCommand.description = `📝  Add an item to complete in your todo list
+...
+Example:
+todo add "Buy some ☕️ after work"
+`;
+AddCommand.usage = 'add <ITEM>';
 
 module.exports = AddCommand;

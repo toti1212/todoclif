@@ -30,16 +30,22 @@ class ListCommand extends Command {
   }
 }
 
-
-ListCommand.description = `🏷\tList of to do and done items`;
-
+// Command config
+ListCommand.aliases = ['ls', 'l'];
 ListCommand.args = [
   {
     name: 'TYPE',
     require: true,
-    description: `Items list. You can get to do or done items;`,
+    description: 'Items list. You can get to do or done items;',
     options: ['todo', 'done'],
   },
 ];
+ListCommand.description = `🏷  List of to do and done items
+...
+Example:
+$ todo list
+$ todo list todo
+$ todo list done
+`;
 
 module.exports = ListCommand;
