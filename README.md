@@ -90,17 +90,20 @@ Mark as done a pending item
 
 ```
 USAGE
-  $ todo done [INDEX]
+  $ todo done [INDEX] | ALL
 
 ARGUMENTS
   INDEX  Todo item identifier
-
+  ALL    Command to mark all items as done
 DESCRIPTION
   ...
   Example: todo done 1
+           todo done all
+
 ```
 
 _See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
+
 
 ## `✍️ todo edit [INDEX]`
 
