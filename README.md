@@ -6,11 +6,13 @@ A CLI to tracking your list of pending and no procrastinate anymore
 [![Version](https://img.shields.io/npm/v/todoclif.svg)](https://npmjs.org/package/todoclif)
 [![Downloads/week](https://img.shields.io/npm/dw/todoclif.svg)](https://npmjs.org/package/todoclif)
 [![License](https://img.shields.io/npm/l/todoclif.svg)](https://github.com/toti1212/todoclif/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/PR-welcome-brightgreen.svg)](https://github.com/toti1212/todoclif/blob/master/CONTRIBUTING.md)
 
 <!-- toc -->
 
 - [Usage](#usage)
 - [Commands](#commands)
+- [Contributing](#contributing)
   <!-- tocstop -->
 
 [![asciicast](https://asciinema.org/a/1vZPqGb8ml2iZxUwSo9tFmG30.svg)](https://asciinema.org/a/1vZPqGb8ml2iZxUwSo9tFmG30)
@@ -34,16 +36,21 @@ $ todo COMMAND
 
 <!-- usagestop -->
 
+
 # Commands
 
 <!-- commands -->
 
-- [`todo add <ITEM>`](#todo-add-item)
-- [`todo clean <LIST_TYPE> <INDEX>`](#todo-clean)
-- [`todo done (<INDEX> | all)`](#todo-done-index)
-- [`todo edit [INDEX]`](#todo-edit-index)
-- [`todo list [TYPE]`](#todo-list-type)
-- [`todo help [COMMAND]`](#todo-help-command)
+- [todoclif](#todoclif)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`📝 todo add <ITEM>`](#%f0%9f%93%9d-todo-add-item)
+  - [`🧹 todo clean <LIST_TYPE> <INDEX>`](#%f0%9f%a7%b9-todo-clean-listtype-index)
+  - [`✅ todo done (<INDEX> | all)`](#%e2%9c%85-todo-done-index--all)
+  - [`✍️ todo edit <ID> "<DESC>"`](#%e2%9c%8d%ef%b8%8f-todo-edit-id-%22desc%22)
+  - [`🏷 todo list (todo|done)`](#%f0%9f%8f%b7-todo-list-tododone)
+  - [`🆘 todo help [COMMAND]`](#%f0%9f%86%98-todo-help-command)
+- [Contributing](#contributing)
 
 ## `📝 todo add <ITEM>`
 
@@ -64,7 +71,7 @@ ALIASES
   $ todo a
 ```
 
-_See code: [src/commands/add.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/add.js)_
+_See code: [src/commands/add.js](https://github.com/toti1212/todoclif/blob/master/src/commands/add.js)_
 
 ## `🧹 todo clean <LIST_TYPE> <INDEX>`
 
@@ -91,7 +98,7 @@ ALIASES
   $ todo c
 ```
 
-_See code: [src/commands/clean.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/clean.js)_
+_See code: [src/commands/clean.js](https://github.com/toti1212/todoclif/blob/master/src/commands/clean.js)_
 
 ## `✅ todo done (<INDEX> | all)`
 
@@ -115,7 +122,7 @@ ALIASES
   $ todo d
 ```
 
-_See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
+_See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/master/src/commands/done.js)_
 
 ## `✍️ todo edit <ID> "<DESC>"`
 
@@ -137,7 +144,7 @@ ALIASES
   $ todo e
 ```
 
-_See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/done.js)_
+_See code: [src/commands/done.js](https://github.com/toti1212/todoclif/blob/master/src/commands/done.js)_
 
 ## `🏷 todo list (todo|done)`
 
@@ -162,7 +169,7 @@ ALIASES
   $ todo l
 ```
 
-_See code: [src/commands/list.js](https://github.com/toti1212/todoclif/blob/v0.0.0/src/commands/list.js)_
+_See code: [src/commands/list.js](https://github.com/toti1212/todoclif/blob/master/src/commands/list.js)_
 
 ## `🆘 todo help [COMMAND]`
 
@@ -182,3 +189,11 @@ OPTIONS
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 
 <!-- commandsstop -->
+
+# Contributing
+
+<!-- contributing -->
+
+Do you want to contribute? Welcome! [Here is the guideline](https://github.com/toti1212/todoclif/blob/master/CONTRIBUTING.md).
+
+<!-- contributingstop -->
