@@ -34,8 +34,7 @@ class Storage {
         });
       }
       return true;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
       return false;
     }
   }

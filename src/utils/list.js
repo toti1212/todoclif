@@ -8,7 +8,6 @@ const list = async type => {
   const data = await storage.read();
 
   const dataEmpty = () => chalk.yellow(CONSTANTS.LIST_EMPTY);
-
   if (type === 'todo') {
     if (!data.todo.length) {
       return dataEmpty();
